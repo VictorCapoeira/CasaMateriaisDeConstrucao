@@ -34,4 +34,19 @@
     font-weight: bold;
     border-bottom: 2px solid #fff;
   }
+ 
+  .card {
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-img-top {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .card-body {
+    background-color: #f8f9fa;
+  }
+  
   
