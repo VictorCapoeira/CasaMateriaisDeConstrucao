@@ -1,8 +1,37 @@
+
 .bg-construcao {
     background-color: #e07b39;
   }
-  .site-title {
-    font-size: 1.8rem;
-    font-weight: bold;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+  .navbar-nav .nav-link {
+    color: #fff;
+    margin-left: 1rem;
+    transition: all 0.3s ease-in-out;
+    position: relative;
   }
+  
+  .navbar-nav .nav-link:hover {
+    color: #ffd699;
+  }
+  
+  .navbar-nav .nav-link::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0%;
+    background-color: #ffd699;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .navbar-nav .nav-link:hover::after {
+    width: 100%;
+  }
+  
+  .navbar-nav .nav-link.active {
+    font-weight: bold;
+    border-bottom: 2px solid #fff;
+  }
+  
