@@ -101,7 +101,55 @@
   </footer>
 
 
-
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const container = document.getElementById("produtosContainer");
+      const filtro = document.getElementById("filtroCategoria");
+  
+      async function carregarProdutos(categoria = "") {
+        try {
+          const resposta = await fetch("/api/produtos");
+          const produtos = await resposta.json();
+  
+          // Filtro
+          const produtosFiltrados = categoria
+            ? produtos.filter(p => p.categoria === categoria)
+            : produtos;
+  
+          // Limpar o container
+          container.innerHTML = "";
+  
+          // Adicionar os produtos
+          produtosFiltrados.forEach(prod => {
+            container.innerHTML += `
+              <div class="col">
+                <div class="card h-100">
+                  <img src="${prod.imagem || 'https://via.placeholder.com/300x200'}" class="card-img-top" alt="${prod.nome}">
+                  <div class="card-body">
+                    <h5 class="card-title">${prod.nome}</h5>
+                    <p class="card-text">${prod.descricao}</p>
+                  </div>
+                  <div class="card-footer">
+                    <strong>R$ ${prod.preco.toFixed(2)}</strong>
+                  </div>
+                </div>
+              </div>
+            `;
+          });
+        } catch (erro) {
+          container.innerHTML = "<p class='text-danger'>Erro ao carregar produtos.</p>";
+          console.error("Erro:", erro);
+        }
+      }
+  
+      filtro.addEventListener("change", () => {
+        carregarProdutos(filtro.value);
+      });
+  
+      carregarProdutos(); // Chamada inicial
+    });
+  </script>
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
     crossorigin="anonymous"></script>
