@@ -48,5 +48,11 @@
   .card-body {
     background-color: #f8f9fa;
   }
+
+  footer a:hover {
+    color: #e07b39;
+    transition: color 0.3s ease-in-out;
+  }
+  
   
   
