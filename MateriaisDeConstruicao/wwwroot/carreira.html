@@ -141,12 +141,29 @@
     </div>
   </footer>
 
-  <script>
-    function setarVaga(vaga) {
-      document.getElementById('vaga').value = vaga;
-    }
+  <<script>
+    document.getElementById("form-candidatura").addEventListener("submit", async function (e) {
+      e.preventDefault();
+  
+      const form = e.target;
+      const formData = new FormData(form);
+  
+      const response = await fetch("/api/candidaturas", {
+        method: "POST",
+        body: formData
+      });
+  
+      if (response.ok) {
+        alert("Candidatura enviada com sucesso!");
+        form.reset();
+        const modal = bootstrap.Modal.getInstance(document.getElementById('modalCandidatura'));
+        modal.hide();
+      } else {
+        alert("Erro ao enviar candidatura.");
+      }
+    });
   </script>
-
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
