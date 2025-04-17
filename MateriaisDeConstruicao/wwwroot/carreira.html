@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Construante</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-  <link rel="stylesheet" href="style/index.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style/index.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
 </head>
 
@@ -46,33 +45,35 @@
       </nav>
     </div>
   </header>
-  <div class="container py-5">
-    <h2 class="mb-4 text-center">Vagas Abertas</h2>
-    <div class="row" id="vagas-container">
-      <!-- Cards de vagas -->
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow">
-          <div class="card-body">
-            <h5 class="card-title">Auxiliar de Estoque</h5>
-            <p class="card-text">Organização e conferência de materiais no estoque. Trabalho em equipe.</p>
-            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCandidatura" onclick="setarVaga('Auxiliar de Estoque')">Candidatar-se</button>
+
+  <main>
+    <div class="container py-5">
+      <h2 class="mb-4 text-center">Vagas Abertas</h2>
+      <div class="row" id="vagas-container">
+        <!-- Cards de vagas -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow">
+            <div class="card-body">
+              <h5 class="card-title">Auxiliar de Estoque</h5>
+              <p class="card-text">Organização e conferência de materiais no estoque. Trabalho em equipe.</p>
+              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCandidatura" onclick="setarVaga('Auxiliar de Estoque')">Candidatar-se</button>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow">
-          <div class="card-body">
-            <h5 class="card-title">Vendedor Interno</h5>
-            <p class="card-text">Atendimento ao cliente e fechamento de vendas na loja física.</p>
-            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCandidatura" onclick="setarVaga('Vendedor Interno')">Candidatar-se</button>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow">
+            <div class="card-body">
+              <h5 class="card-title">Vendedor Interno</h5>
+              <p class="card-text">Atendimento ao cliente e fechamento de vendas na loja física.</p>
+              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCandidatura" onclick="setarVaga('Vendedor Interno')">Candidatar-se</button>
+            </div>
           </div>
         </div>
+        <!-- Adicione mais vagas aqui se quiser -->
       </div>
-
-      <!-- Adicione mais vagas aqui se quiser -->
     </div>
-  </div>
+  </main>
 
   <!-- Modal de candidatura -->
   <div class="modal fade" id="modalCandidatura" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
@@ -112,7 +113,6 @@
     </div>
   </div>
 
-  
   <footer class="bg-dark text-white py-4">
     <div class="container">
       <div class="row align-items-center">
@@ -146,9 +146,7 @@
     }
   </script>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
-    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
