@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Construante</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style/index.css" />
+  <link rel="stylesheet" href="style/carreira.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+</head>
+
+<body>
+  <header class="bg-construcao text-white shadow-sm">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand d-flex align-items-center" href="/">
+            <img src="img/logo_tijolo.png" alt="Logo" class="me-2" style="height: 50px;">
+            <span class="fs-4 fw-bold">Construante</span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="produtos.html">Produtos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/Carreiras">Carreiras</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/Contato">Contato</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container py-5">
+      <h2 class="mb-4 text-center">Vagas Abertas</h2>
+      <div class="row" id="vagas-container">
+        <!-- Cards de vagas -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow">
+            <div class="card-body">
+              <h5 class="card-title">Auxiliar de Estoque</h5>
+              <p class="card-text">Organização e conferência de materiais no estoque. Trabalho em equipe.</p>
+              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCandidatura" onclick="setarVaga('Auxiliar de Estoque')">Candidatar-se</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow">
+            <div class="card-body">
+              <h5 class="card-title">Vendedor Interno</h5>
+              <p class="card-text">Atendimento ao cliente e fechamento de vendas na loja física.</p>
+              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCandidatura" onclick="setarVaga('Vendedor Interno')">Candidatar-se</button>
+            </div>
+          </div>
+        </div>
+        <!-- Adicione mais vagas aqui se quiser -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal de candidatura -->
+  <div class="modal fade" id="modalCandidatura" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <form class="modal-content" id="form-candidatura" enctype="multipart/form-data">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalLabel">Candidatar-se à vaga</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" name="vaga" id="vaga" />
+
+          <div class="mb-3">
+            <label for="nome" class="form-label">Nome completo</label>
+            <input type="text" class="form-control" name="nome" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label">E-mail</label>
+            <input type="email" class="form-control" name="email" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="telefone" class="form-label">Telefone</label>
+            <input type="tel" class="form-control" name="telefone" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="curriculo" class="form-label">Currículo (PDF)</label>
+            <input type="file" class="form-control" name="curriculo" accept=".pdf" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success">Enviar candidatura</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-white py-4">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+          <img src="img/logo_tijolo.png" alt="Logo CasaMateriais" style="height: 60px;">
+        </div>
+
+        <div class="col-md-4 text-center mb-3 mb-md-0">
+          <p class="mb-1">Rua das Construções, 123 - Centro, Cidade/UF</p>
+          <p class="mb-0">&copy; 2025 CasaMateriaisDeConstrucao. Todos os direitos reservados.</p>
+        </div>
+
+        <div class="col-md-4 text-center text-md-end">
+          <a href="#" class="text-white me-3" title="Facebook">
+            <i class="fab fa-facebook fa-lg"></i>
+          </a>
+          <a href="#" class="text-white me-3" title="Instagram">
+            <i class="fab fa-instagram fa-lg"></i>
+          </a>
+          <a href="#" class="text-white" title="WhatsApp">
+            <i class="fab fa-whatsapp fa-lg"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function setarVaga(vaga) {
+      document.getElementById('vaga').value = vaga;
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
