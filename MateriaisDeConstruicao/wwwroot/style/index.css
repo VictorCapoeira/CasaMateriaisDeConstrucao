@@ -1,0 +1,58 @@
+
+.bg-construcao {
+    background-color: #e07b39;
+  }
+  
+  .navbar-nav .nav-link {
+    color: #fff;
+    margin-left: 1rem;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #ffd699;
+  }
+  
+  .navbar-nav .nav-link::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0%;
+    background-color: #ffd699;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .navbar-nav .nav-link:hover::after {
+    width: 100%;
+  }
+  
+  .navbar-nav .nav-link.active {
+    font-weight: bold;
+    border-bottom: 2px solid #fff;
+  }
+ 
+  .card {
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-img-top {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .card-body {
+    background-color: #f8f9fa;
+  }
+
+  footer a:hover {
+    color: #e07b39;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  
+  
